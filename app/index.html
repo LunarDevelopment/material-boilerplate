@@ -1,0 +1,197 @@
+<!doctype html>
+<html class="no-js" ng-app="materialBoilerplateApp">
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- build:css(.) styles/vendor.css -->
+    <!-- bower:css -->
+    <link rel="stylesheet" href="bower_components/angular-material/angular-material.css" />
+    <link rel="stylesheet" href="bower_components/angular-loading-bar/build/loading-bar.css" />
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:css(.tmp) styles/main.css -->
+    <link rel="stylesheet" href="styles/main.css">
+    <!-- endbuild -->
+</head>
+
+<body layout="row" ng-cloak ng-controller="NavCtrl">
+    <md-button ng-click="openBottom()" aria-label="Options" class=" md-fab md-fab-bottom-right">
+        <ng-md-icon icon="whatshot" size="36"></ng-md-icon> 
+    </md-button>
+    <!--[if lt IE 7]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+    <!-- Add your site or application content here -->
+    <md-sidenav layout="column" class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$mdMedia('gt-md')">
+        <md-toolbar class="md-tall">
+            <span flex=""></span>
+            <h1 class="md-toolbar-tools md-toolbar-tools-bottom">
+                <span class="md-flex">App Name</span>
+            </h1>
+        </md-toolbar>
+
+
+        <md-content layout="column" layout-align="space-between" flex>
+            <ul class="docs-menu">
+                <li ng-repeat="section in menu.sections" class="parent-list-item {{section.className || ''}}" ng-class="{'parentActive' : isSectionSelected(section)}">
+                    <h2 class="menu-heading md-subhead" ng-if="section.type === 'heading'" id="heading_{{ section.name | nospace }}">
+                        {{section.name}}
+                    </h2>
+                    <menu-link section="section" ng-if="section.type === 'link'"></menu-link>
+
+                    <menu-toggle section="section" ng-if="section.type === 'toggle'"></menu-toggle>
+
+                    <ul ng-if="section.children" class="menu-nested-list">
+                        <li ng-repeat="child in section.children" ng-class="{'childActive' : isSectionSelected(child)}">
+                            <menu-link section="child" ng-if="child.type === 'link'"></menu-link>
+
+                            <menu-toggle section="child" ng-if="child.type === 'toggle'"></menu-toggle>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </md-content>
+    </md-sidenav>
+
+    <div layout="column" tabIndex="-1" role="main" flex>
+        <md-toolbar class="md-whiteframe-glow-z1 site-content-toolbar">
+
+            <div class="md-toolbar-tools docs-toolbar-tools" tabIndex="-1">
+                
+                <md-button class="md-icon-button" ng-click="openMenu()" hide-gt-md aria-label="Toggle Menu">
+                    <ng-md-icon icon="menu" size="44"></ng-md-icon>
+                </md-button>
+                <div layout="row" flex class="fill-height">
+                    <h2 class="md-toolbar-item md-breadcrumb md-headline">
+                        <span ng-if="menu.currentPage.name !== menu.currentSection.name">
+                            <span hide-sm hide-md>{{menu.currentSection.name}}</span>
+                            <span class="docs-menu-separator-icon" hide-sm hide-md style="transform: translate3d(0, 1px, 0)">
+                                <span class="md-visually-hidden">-</span>
+                                <ng-md-icon icon="home" ></ng-md-icon> 
+                            </span>
+                        </span>
+                        <span class="md-breadcrumb-page">{{menu.currentPage | humanizeDoc}}</span>
+                    </h2>
+
+                    <span flex></span>
+                    <!-- use up the empty space -->
+
+                    <div class="md-toolbar-item docs-tools" layout="row">
+                        <md-button class="md-icon-button" aria-label="Contact Us" ng-click="openRight()">
+                            <md-tooltip md-autohide>Contact Us</md-tooltip>
+                            <h2 class="md-toolbar-item md-breadcrumb md-headline">
+                                <ng-md-icon icon="quick_contacts_mail" style="fill: amber"></ng-md-icon>
+                            </h2>
+                        </md-button>
+
+                    </div>
+                </div>
+            </div>
+
+        </md-toolbar>
+
+        <md-content ng-view md-scroll-y flex layout-padding></md-content>
+
+    </div>
+    
+    <md-sidenav layout="column" class="md-sidenav-right md-whiteframe-z2" md-component-id="right">
+        <md-toolbar class="md-theme-light">
+            <h1 class="md-toolbar-tools">Contact Us</h1>
+        </md-toolbar>
+        <md-content layout="column" layout-align="space-between" flex>
+            <form ng-submit="submit()" name="contactForm">
+                <md-input-container>
+                    <label>Name</label>
+                    <input md-maxlength="30" required="" name="name" ng-model="contact.name">
+                    <div ng-messages="contactForm.name.$touched && contactForm.name.$error">
+                        <div ng-message="required">This is required.</div>
+                        <div ng-message="md-maxlength">The name has to be less than 30 characters long.</div>
+                    </div>
+                </md-input-container>
+
+                <md-input-container>
+                    <label>Email</label>
+                    <input ng-model="contact.email" required="" name="email" type="email">
+                    <div ng-messages="contactForm.email.$touched && contactForm.email.$error">
+                        <div ng-message="required">This is required.</div>
+                        <div ng-message="email">Your email address is invalid</div>
+                    </div>
+                </md-input-container>
+
+                <md-input-container flex="">
+                    <label>Message</label>
+                    <textarea ng-model="contactForm.message" columns="1" md-maxlength="450"></textarea>
+                   
+                </md-input-container>
+                <div layout="row" layout-align="center center">
+                    <md-button class="md-fab" aria-label="Make Contact!">
+                        <ng-md-icon icon="send"></ng-md-icon> 
+                    </md-button>
+                </div>
+            </form>
+
+            <ul class="docs-menu">
+                <li class="parent-list-item ">
+                    <md-button class="md-primary md-button md-default-theme" ng-href ng-click="closeRight()">
+                        Close Sidenav Right
+
+                    </md-button>
+                </li>
+            </ul>
+        </md-content>
+
+    </md-sidenav>
+    
+
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
+    <script>
+        ! function (A, n, g, u, l, a, r) {
+            A.GoogleAnalyticsObject = l, A[l] = A[l] || function () {
+                    (A[l].q = A[l].q || []).push(arguments)
+                }, A[l].l = +new Date, a = n.createElement(g),
+                r = n.getElementsByTagName(g)[0], a.src = u, r.parentNode.insertBefore(a, r)
+        }(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-XXXXX-X');
+        ga('send', 'pageview');
+    </script>
+
+    <!-- build:js(.) scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
+    <script src="bower_components/angular-aria/angular-aria.js"></script>
+    <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+    <script src="bower_components/angular-messages/angular-messages.js"></script>
+    <script src="bower_components/angular-resource/angular-resource.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <script src="bower_components/angular-touch/angular-touch.js"></script>
+    <script src="bower_components/angular-material/angular-material.js"></script>
+    <script src="bower_components/angular-material-icons/angular-material-icons.min.js"></script>
+    <script src="bower_components/angular-loading-bar/build/loading-bar.js"></script>
+    <script src="bower_components/ng-breadcrumbs/dist/ng-breadcrumbs.min.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+
+    <!-- build:js({.tmp,app}) scripts/scripts.js -->
+    <script src="scripts/app.js"></script>
+    <script src="scripts/controllers/main.js"></script>
+    <script src="scripts/controllers/about.js"></script>
+    <script src="scripts/controllers/nav.js"></script>
+    <script src="scripts/services/menu.js"></script>
+    <script src="scripts/filters/nospace.js"></script>
+    <script src="scripts/filters/humanizedoc.js"></script>
+    <script src="scripts/filters/directivebrackets.js"></script>
+    <script src="scripts/directives/menulink.js"></script>
+    <script src="scripts/directives/menutoggle.js"></script>
+    <script src="scripts/controllers/bottomsheet.js"></script>
+    <!-- endbuild -->
+</body>
+
+</html>
