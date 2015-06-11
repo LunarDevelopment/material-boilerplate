@@ -24,7 +24,7 @@ Out of the box this Repo contains examples of:
 
 ### Why material-boilerplate ?
 
-This Boilerplate Demonstrates:
+Features: 
 
 *  Angular Material `layout` and `flex` options can easily configure HTML containers.
 *  Angular Material components, no bootstrap involved here! 
@@ -39,6 +39,8 @@ This Boilerplate Demonstrates:
 * Best practice examples of `$timeout`, `$location`, `$rootScope`, `$window`.
 * `$mdToast` seamlessly integrated for notifications .
 * `$animate` used app wide for smooth transitions and a consistent feel. 
+*  [angular-loading-bar]( https://github.com/chieffancypants/angular-loading-bar ) has been set up to work autonomously, providing a loading bar for http requests, alerting your users to progress without you having to write a single word of Javascript! 
+*  [ngMdIcons]( https://github.com/klarsys/angular-material-icons ) are implimented app wide to replace `<md-icon>` directive and its limited supply of SVGs out the box. 
 
 ## Yeoman generator-angular 
 This project is generated with [yo angular generator](https://github.com/yeoman/generator-angular)
