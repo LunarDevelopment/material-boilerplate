@@ -16,5 +16,10 @@ Running `grunt test` will run the unit tests with karma.
 
 ## TODO: 
 - readme 
+  1. List all modules 
+  2. Intro 
+  3. Complete TODO list 
+  4. Contribution Network
 - resolve bower package conflicts
 - clean up controllers and HTML 
+- test / shim backwards compatible browsers 
