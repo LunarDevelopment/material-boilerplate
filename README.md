@@ -1,13 +1,8 @@
 # material-boilerplate
 
-<br/>
-
 ![material-boilerplate](http://lunar-development.co.uk/Projects/material-boilerplate/example.png)
 
-<br/>
-
 See a Live example of this boilerplate here: [Material Boilerplate Live](http://lunar-development.co.uk/Projects/material-boilerplate/#/) 
-
 
 ## Goodies
 
@@ -18,6 +13,22 @@ Out of the box this Repo contains examples of:
 - [ngMdIcons]( https://github.com/klarsys/angular-material-icons )
 - [angular-loading-bar]( https://github.com/chieffancypants/angular-loading-bar )
 - [ng-breadcrumbs]( https://github.com/ianwalter/ng-breadcrumbs )
+
+This Boilerplate Demonstrates:
+
+*  Angular Material `layout` and `flex` options can easily configure HTML containers.
+*  Angular Material components, no bootstrap involved here! 
+*  A 360 UI built around the `ng-view` with Left and Right `<md-sidenav>`, `<md-bottomsheet>` & global `<md-toolbar>` containing auto generated Breadcrums.
+*  Custom controller for `$mdBottomSheet` with HTML partial template.
+*  A set of html partial templates and directives for things such as unique menu buttons.
+*  Responsive breakpoints and `$mdMedia` are used.
+*  Using the `$mdThemingProvider` for quick app theme configuration.
+*  Using expanded Angular Material SASS files for more customisation than [ngMaterial]( https://github.com/angular/material ) gives you out the box.
+*  ARIA warnings used in the beautiful contact form.
+*  Menu factory in place to automatically create a beautiful side menu as used on [material.angularjs.or](https://material.angularjs.org/latest/#/getting-started).
+* Best practice examples of $timeout, $location, $rootScope, $window.
+* $mdToast seamlessly integrated for notifications .
+* $animate used app wide for smooth transitions and a consistent feel. 
 
 This project is generated with [yo angular generator](https://github.com/yeoman/generator-angular)
 version 0.11.1, so following their commands will work in this built repo, some examples:
@@ -66,3 +77,4 @@ Running `grunt test` will run the unit tests with karma.
 - ~~resolve bower package conflicts~~
 - clean up controllers and HTML 
 - test / shim backwards compatible browsers 
+- Annotate Code... 
