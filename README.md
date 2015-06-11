@@ -1,5 +1,11 @@
 # material-boilerplate
 
+<br/>
+
+![material-boilerplate](http://lunar-development.co.uk/Projects/material-boilerplate/example.png)
+
+<br/>
+
 See a Live example of this boilerplate here: [Material Boilerplate Live](http://lunar-development.co.uk/Projects/material-boilerplate/#/) 
 
 
