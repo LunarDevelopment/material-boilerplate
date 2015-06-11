@@ -23,12 +23,12 @@ This Boilerplate Demonstrates:
 *  A set of html partial templates and directives for things such as unique menu buttons.
 *  Responsive breakpoints and `$mdMedia` are used.
 *  Using the `$mdThemingProvider` for quick app theme configuration.
-*  Using expanded Angular Material SASS files for more customisation than [ngMaterial]( https://github.com/angular/material ) gives you out the box.
+*  Using expanded Angular Material `SASS` files for more customisation than [ngMaterial]( https://github.com/angular/material ) gives you out the box.
 *  ARIA warnings used in the beautiful contact form.
-*  Menu factory in place to automatically create a beautiful side menu as used on [material.angularjs.or](https://material.angularjs.org/latest/#/getting-started).
-* Best practice examples of $timeout, $location, $rootScope, $window.
-* $mdToast seamlessly integrated for notifications .
-* $animate used app wide for smooth transitions and a consistent feel. 
+*  `Menu factory` in place to automatically create a beautiful side menu as used on [material.angularjs.or](https://material.angularjs.org/latest/#/getting-started).
+* Best practice examples of `$timeout`, `$location`, `$rootScope`, `$window`.
+* `$mdToast` seamlessly integrated for notifications .
+* `$animate` used app wide for smooth transitions and a consistent feel. 
 
 This project is generated with [yo angular generator](https://github.com/yeoman/generator-angular)
 version 0.11.1, so following their commands will work in this built repo, some examples:
