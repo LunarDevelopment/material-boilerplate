@@ -19,7 +19,29 @@ version 0.11.1, so following their commands will work in this built repo, some e
 ```
 yo angular:route blog 
 ```
-generates a controller + view for your blog section and generates Karma test for the controller. 
+Generates a controller + view for your blog section and generates Karma test for the controller. 
+
+## Setting up
+
+cd into a parent folder you'd like the project to live in
+
+Then Clone this Repo: 
+```
+git clone https://github.com/LunarDevelopment/material-boilerplate.git {{YOUR FOLDER NAME}}
+
+```
+Then cd into your new project root: 
+```
+cd {{YOUR FOLDER NAME}}
+```
+Then to set up the project ready for use:  
+```
+npm install && bower install
+```
+> NOTE: Untill I find time to iron out all kinks, if you get any errors with the above command just run `npm install` again then `bower install` again seperatley.. 
+
+Once this has been ran then you can ensure the quality of the install by serving it locally with `grunt serve`
+>This will serve the app onto http://localhost:9000/
 
 ## Build & development
 
