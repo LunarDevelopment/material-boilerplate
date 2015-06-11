@@ -7,11 +7,11 @@ See a Live example of this boilerplate here: [Material Boilerplate Live](http://
 
 Out of the box this Repo contains examples of: 
 
-[ngAnimate ngAria ngCookies ngMessages ngResource ngRoute ngSanitize ngTouch]( https://docs.angularjs.org/api )
-[ngMaterial]( https://github.com/angular/material )
-[ngMdIcons]( https://github.com/klarsys/angular-material-icons )
-[angular-loading-bar]( https://github.com/chieffancypants/angular-loading-bar )
-[ng-breadcrumbs]( https://github.com/ianwalter/ng-breadcrumbs )
+- [Angular Core]( https://docs.angularjs.org/api )
+- [ngMaterial]( https://github.com/angular/material )
+- [ngMdIcons]( https://github.com/klarsys/angular-material-icons )
+- [angular-loading-bar]( https://github.com/chieffancypants/angular-loading-bar )
+- [ng-breadcrumbs]( https://github.com/ianwalter/ng-breadcrumbs )
 
 This project is generated with [yo angular generator](https://github.com/yeoman/generator-angular)
 version 0.11.1, so following their commands will work in this built repo, some examples:
