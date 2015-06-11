@@ -4,6 +4,14 @@
 
 See a Live example of this boilerplate here: [Material Boilerplate Live](http://lunar-development.co.uk/Projects/material-boilerplate/#/) 
 
+## Motivation 
+
+This is an AngularJS Material Design base for future websites and projects. 
+
+I've made this because I was frustrated with the other boilerplates / material angular examples out there and decided to do something about it. 
+
+I'll update as regularly as I can and Contribution / Stars / Feedback is more than welcome, just open a new issue to help out! 
+
 ## Goodies
 
 Out of the box this Repo contains examples of: 
@@ -13,6 +21,8 @@ Out of the box this Repo contains examples of:
 - [ngMdIcons]( https://github.com/klarsys/angular-material-icons )
 - [angular-loading-bar]( https://github.com/chieffancypants/angular-loading-bar )
 - [ng-breadcrumbs]( https://github.com/ianwalter/ng-breadcrumbs )
+
+### Why material-boilerplate ?
 
 This Boilerplate Demonstrates:
 
@@ -30,6 +40,7 @@ This Boilerplate Demonstrates:
 * `$mdToast` seamlessly integrated for notifications .
 * `$animate` used app wide for smooth transitions and a consistent feel. 
 
+## Yeoman generator-angular 
 This project is generated with [yo angular generator](https://github.com/yeoman/generator-angular)
 version 0.11.1, so following their commands will work in this built repo, some examples:
 
@@ -71,7 +82,7 @@ Running `grunt test` will run the unit tests with karma.
 ## TODO: 
 - readme 
   1. ~~List all modules~~ 
-  2. Intro 
+  2. ~~Intro~~
   3. Complete TODO list 
   4. Contribution Network
 - ~~resolve bower package conflicts~~
