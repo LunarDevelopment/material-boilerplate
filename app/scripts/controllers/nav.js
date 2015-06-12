@@ -9,23 +9,37 @@
  */
 angular.module('materialBoilerplateApp')
     .controller('NavCtrl', function ($scope, $mdSidenav, $timeout, $mdDialog, menu, $location, $rootScope, $window, $log, $mdBottomSheet, $mdToast, $animate, breadcrumbs) {
-        $scope.tgState = false;
+        /* 
+        It is not best practice to mix Self and $scope however this code is based on: https://material.angularjs.org/latest/ and they do so. 
+        Also this mix is my own pre cursor to using only Self when Angular v2.0 is released as $scope will be depricated. 
+        */
         var self = this;
+        // See the Menu Factory for more details on what this is and does. 
         $scope.menu = menu;
+        // This needs revised as although the breadcrumbs directive works very well, its not is use currently and the toolbar page names are being generated manually.
         $scope.breadcrumbs = breadcrumbs;
-        $scope.path = path;
+    // *********************
+    // DETAILS NEEDED
+    // *********************
         $scope.goHome = goHome;
+    // Open Left Nav
         $scope.openMenu = openMenu;
+    // Close Left Nav
         $scope.closeMenu = closeMenu;
+    // Open Right Nav -- This is the Contact Form
         $scope.openRight = openRight;
+    // Close Right Nav -- This is the Contact Form
         $scope.closeRight = closeRight;
+    // Submit the contact form if Valid (!contactForm.$error)
         $scope.submit = submit;
+    // FAB button function opening the $mdBottomSheet
         $scope.openBottom = openBottom;
+    // $mdToast creates pop up notifications together with $animate -- currently set to top left 
         $scope.showToast = showToast;
         $scope.isSectionSelected = isSectionSelected;
         $rootScope.$on('$locationChangeSuccess', openPage);
         $scope.focusMainContent = focusMainContent;
-        
+
         //-- Define a fake model for the related page selector
         Object.defineProperty($rootScope, 'relatedPage', {
             get: function () {
@@ -78,6 +92,7 @@ angular.module('materialBoilerplateApp')
                 $mdSidenav('right').open();
             });
         }
+
         function submit() {
             $timeout(function () {
                 showToast('Submitted!');
@@ -151,8 +166,8 @@ angular.module('materialBoilerplateApp')
         function toggleOpen(section) {
             menu.toggleSelectSection(section);
         }
-    
-    
+
+
         function showToast(content) {
             var toasty = content || 'Cheers!';
             $mdToast.show(
@@ -162,6 +177,4 @@ angular.module('materialBoilerplateApp')
                 .hideDelay(2000)
             );
         }
-    
-    
     });

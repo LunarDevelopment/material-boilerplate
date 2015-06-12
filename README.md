@@ -81,8 +81,8 @@ Run `grunt` for building and `grunt serve` for preview.
 
 Running `grunt test` will run the unit tests with karma.
 
-## TODO: 
-- readme 
+## To-do: 
+- Readme 
   1. ~~List all modules~~ 
   2. ~~Intro~~
   3. Complete TODO list 
@@ -91,3 +91,6 @@ Running `grunt test` will run the unit tests with karma.
 - clean up controllers and HTML 
 - test / shim backwards compatible browsers 
 - Annotate Code... 
+
+## Known Issues: 
+-  Right Nav rendering issue on mobile browsers (seperating nav menu into partial view should fix this)
